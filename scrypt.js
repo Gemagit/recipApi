@@ -29,7 +29,7 @@ function pintarHome() {
   let contenedor = document.createElement('div');
   contenedor.classList.add('contenedor');
 
-  // Crear sección uno con la imagen
+  // Creo sección uno con la imagen
   let sectionOne = document.createElement('section');
   sectionOne.classList.add('sectionOne');
   let imagen = document.createElement('img');
@@ -39,14 +39,14 @@ function pintarHome() {
   contenedor.appendChild(sectionOne);
 
 
-  // Crear sección dos con el título, el menú y el formulario de búsqueda
+  // Creo sección dos con el título, el menú y el formulario de búsqueda
   let sectionTwo = document.createElement('section');
   sectionTwo.classList.add('sectionTwo');
   let titulo = document.createElement('h1');
   titulo.textContent = 'recipApi';
   sectionTwo.appendChild(titulo);
 
-  // Crear menú listado y enlaces
+  // Creo menú listado y enlaces
   let nav = document.createElement('nav');
   let ul = document.createElement('ul');
   let nombresEnlaces = ['Home', 'Recipes', 'About'];
@@ -61,7 +61,7 @@ function pintarHome() {
   nav.appendChild(ul);
   sectionTwo.appendChild(nav);
 
-  // Crear búsqueda por categoría
+  // Creo búsqueda por categoría
   let formulario = document.createElement('form');
   let inputBusqueda = document.createElement('input');
   inputBusqueda.type = 'text';
@@ -81,24 +81,179 @@ function pintarHome() {
   main.appendChild(contenedor);
 }
 
-// Llamar a la función para que se ejecute y pinte la estructura en el DOM
+// Llamo a la función para que se ejecute y pinte la estructura en el DOM porque he llamado dentro también a la otra función.
 pintarHome();
 
 
 
 
 
+function pintarRecipes() {
+  // Borro el contenido que tenía y pinto uno nuevo
+  let main = document.querySelector('main');
+  main.innerHTML = '';
+
+  // Llamo a la función pintarHome para que me pinte el navegador y el titulo de mi web
+  pintarHome();
+
+  // Obtener la secciónOne
+  let sectionOne = document.querySelector('.sectionOne');
+
+  //declaro el objeto que contiene el array de objetos meals. Después accederé a cada clave valor para pintar en el DOM
+  let data = {
+    "meals": [
+      {
+        "strMeal": "Squash linguine",
+        "strCategory": "Vegetarian",
+        "strInstructions": "Heat oven to 200C/180C fan/gas 6. Put the squash and garlic on a baking tray and drizzle with the olive oil. Roast for 35-40 mins until soft. Season.\r\nCook the pasta according to pack instructions. Drain, reserving the water. Use a stick blender to whizz the squash with 400ml cooking water. Heat some oil in a frying pan, fry the sage until crisp, then drain on kitchen paper. Tip the pasta and sauce into the pan and warm through. Scatter with sage.",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/wxswxy1511452625.jpg",
+        "strIngredient1": "Butternut Squash",
+        "strIngredient2": "Garlic",
+        "strIngredient3": "Olive Oil",
+        "strIngredient4": "Linguine Pasta",
+        "strIngredient5": "Sage",
+        "strIngredient6": "",
+        "strIngredient7": "",
+        "strIngredient8": "",
+        "strIngredient9": "",
+        "strIngredient10": "",
+        "strIngredient11": "",
+        "strIngredient12": "",
+        "strIngredient13": "",
+        "strIngredient14": "",
+        "strIngredient15": "",
+        "strIngredient16": "",
+        "strIngredient17": "",
+        "strIngredient18": "",
+        "strIngredient19": "",
+        "strIngredient20": "",
+        "strMeasure1": "350g",
+        "strMeasure2": "3 parts ",
+        "strMeasure3": "3 tbs",
+        "strMeasure4": "350g",
+        "strMeasure5": "Small bunch",
+        "strMeasure6": "",
+        "strMeasure7": "",
+        "strMeasure8": "",
+        "strMeasure9": "",
+        "strMeasure10": "",
+        "strMeasure11": "",
+        "strMeasure12": "",
+        "strMeasure13": "",
+        "strMeasure14": "",
+        "strMeasure15": "",
+        "strMeasure16": "",
+        "strMeasure17": "",
+        "strMeasure18": "",
+        "strMeasure19": "",
+        "strMeasure20": "",
+      }
+    ]
+  };
+
+  // Obtener el array de recetas
+  let meals = data.meals;
+
+  // Tomar la primera receta (en este caso, solo hay una)
+  let recipe = meals[0];
+
+  // Crear un artículo con la información de la receta
+  let article = document.createElement('article');
+
+  // Crear elementos para la receta
+  let h2 = document.createElement('h2');
+  h2.textContent = recipe.strMeal;
+  let h3 = document.createElement('h3');
+  h3.textContent = recipe.strCategory;
+
+  let img = document.createElement('img');
+  img.src = recipe.strMealThumb;
+  img.alt = recipe.strMeal;
+  img.classList.add('recipe_img');
+
+  let ul = document.createElement('ul');
+  ul.classList.add('recipe_ul');
+  for (let i = 1; i <= 20; i++) { // Itero sobre los ingredientes (del 1 al 20)
+    let ingredient = recipe['strIngredient' + i];
+    if (ingredient) { // Verificar si el ingrediente existe
+      let li = document.createElement('li');
+      li.textContent = `${ingredient} - ${recipe['strMeasure' + i]}`;
+      ul.appendChild(li);
+    } else {
+      break; // Salir del bucle si no hay más ingredientes
+    }
+  }
+
+  let ingredientsTitle = document.createElement('ul');
+  ingredientsTitle.textContent = 'Ingredients:';
+
+  let p = document.createElement('p');
+  p.textContent = recipe.strInstructions;
+
+  let instructionsTitle = document.createElement('p');
+  instructionsTitle.textContent = 'Instructions:';
 
 
+  // Agregar las etiquetas al artícle
+  article.appendChild(h2);
+  article.appendChild(h3);
+  article.appendChild(img);
+  article.appendChild(ingredientsTitle);
+  article.appendChild(ul);
+  article.appendChild(instructionsTitle);
+  article.appendChild(p);
 
-/*  function pintarRecipes() {
- 
-      let borrarContenido= sectionOne.innerHTML = '';
-
-      
+  // Reemplazar la imagen en la sectionOne con el nuevo artículo
+  sectionOne.innerHTML = '';
+  sectionOne.appendChild(article);
 }
 
-pintarRecipes() */
+
+
+
+
+function pintarAbout() {
+  // Borro el contenido que tenía y pinto uno nuevo
+  let main = document.querySelector('main');
+  main.innerHTML = '';
+
+  // Llamo a la función pintarHome para que me pinte el navegador y el titulo de mi web
+  pintarHome();
+
+  // Obtener la secciónOne
+  let sectionOne = document.querySelector('.sectionOne');
+
+  // Crear un artículo con la info de mi about
+  let article = document.createElement('article');
+
+  let h2= document.createElement('h2');
+  h2.textContent='About me';
+  h2.classList.add('about_h2');
+
+
+  let img = document.createElement('img');
+  img.src = 'assets/chicagusanitos.jpg';
+  img.alt = 'Foto de chica comiendo gusanitos';
+  img.classList.add('about_img');
+
+  let p= document.createElement('p');
+  p.textContent=('Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He de reconocer que me gusta más comer que cocinar. Pero aún así,cocinar es una de mis grandes pasiones, y si es en buena compañía y con un buen vino, pues mucho mejor. Desde pequeña la cocina ha estado muy presente en mi vida. Mi padre ha tenido varios restaurantes y ha sido un gran cocinero, muy minucioso y siempre creando platos y sabores nuevos. Por otro lado, toda mi familia proviene de Andalucía. Allí hay mucha tradición gastronómica y en los eventos familiares el arroz, un puchero o un buen pescado no podían faltar en el menú. Espero que disfrutéis tanto como yo de esta magnífica colección de recetas.');
+  p.classList.add('about_p');
+
+
+
+  // Agregar las etiquetas al artícle
+  article.appendChild(h2);
+  article.appendChild(img);
+  article.appendChild(p);
+
+  // Reemplazar la imagen en la sectionOne con el nuevo artículo
+  sectionOne.innerHTML = '';
+  sectionOne.appendChild(article);
+}
+
+pintarAbout();
+
 
 
 
