@@ -1,43 +1,9 @@
-/* URL API filtrado por categoría('http://www.themealdb.com/api/json/v1/1/categories.php')*/
-
-
-
-/* async function solicitarApiRecipes() {
-  try {
-      const response = await fetch('http://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata');
-      if (!response.ok) {
-          throw new Error('Error en la solicitud');
-      }
-
-      const data = await response.json();
-      console.log(data);
-     
-    
-  } catch (error) {
-      console.error('Error:', error);
-  }
-}
-
-solicitarApiRecipes(); */
-
-
-
 
 
 function pintarHome() {
-  // Crear contenedor principal, dentro de éste irán sectionOne y sectionTwo
+  // Creo contenedor principal, dentro de éste irán sectionOne y sectionTwo
   let contenedor = document.createElement('div');
   contenedor.classList.add('contenedor');
-
-  // Creo sección uno con la imagen
-  let sectionOne = document.createElement('section');
-  sectionOne.classList.add('sectionOne');
-  let imagen = document.createElement('img');
-  imagen.src = 'assets/bentojapones.jpg';
-  imagen.alt = 'Bento japones';
-  sectionOne.appendChild(imagen);
-  contenedor.appendChild(sectionOne);
-
 
   // Creo sección dos con el título, el menú y el formulario de búsqueda
   let sectionTwo = document.createElement('section');
@@ -76,19 +42,33 @@ function pintarHome() {
   contenedor.appendChild(sectionTwo);
 
 
+  // Creo sección uno con la imagen
+  let sectionOne = document.createElement('section');
+  sectionOne.classList.add('sectionOne');
+  let imagen = document.createElement('img');
+  imagen.src = 'assets/bentojapones.jpg';
+  imagen.alt = 'Bento japones';
+  sectionOne.appendChild(imagen);
+  contenedor.appendChild(sectionOne);
+
+
+
+
   // Obtener el elemento main y agregar el contenedor a él
   let main = document.querySelector('main');
   main.appendChild(contenedor);
 }
 
 // Llamo a la función para que se ejecute y pinte la estructura en el DOM porque he llamado dentro también a la otra función.
-pintarHome();
+//pintarHome();
 
 
 
 
 
-function pintarRecipes() {
+
+
+async function pintarRecipes() {
   // Borro el contenido que tenía y pinto uno nuevo
   let main = document.querySelector('main');
   main.innerHTML = '';
@@ -99,7 +79,7 @@ function pintarRecipes() {
   // Obtener la secciónOne
   let sectionOne = document.querySelector('.sectionOne');
 
-  //declaro el objeto que contiene el array de objetos meals. Después accederé a cada clave valor para pintar en el DOM
+  //Esto es solo para trabajar con un ejemplo de receta y no saturar la llamada a la API--> declaro el objeto que contiene el array de objetos meals. Después accederé a cada clave valor para pintar en el DOM
   let data = {
     "meals": [
       {
@@ -151,16 +131,19 @@ function pintarRecipes() {
     ]
   };
 
+  /*  let response = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
+   let data = await response.json(); */
+
   // Obtener el array de recetas
   let meals = data.meals;
 
   // Tomar la primera receta (en este caso, solo hay una)
   let recipe = meals[0];
 
-  // Crear un artículo con la información de la receta
+  // Creo un artículo con la información de la receta
   let article = document.createElement('article');
 
-  // Crear elementos para la receta
+  // Creo elementos para la receta
   let h2 = document.createElement('h2');
   h2.textContent = recipe.strMeal;
   let h3 = document.createElement('h3');
@@ -193,6 +176,12 @@ function pintarRecipes() {
   let instructionsTitle = document.createElement('p');
   instructionsTitle.textContent = 'Instructions:';
 
+  // Creo botón para cargar la siguiente receta
+  let button = document.createElement('button');
+  button.textContent = 'Next recipe';
+  button.classList.add('next');
+  document.getElementsByTagName('article');
+
 
   // Agregar las etiquetas al artícle
   article.appendChild(h2);
@@ -202,11 +191,22 @@ function pintarRecipes() {
   article.appendChild(ul);
   article.appendChild(instructionsTitle);
   article.appendChild(p);
+  article.appendChild(button);
 
-  // Reemplazar la imagen en la sectionOne con el nuevo artículo
+  // Reemplazar la imagen en la sectionOne con el nuevo artícle
   sectionOne.innerHTML = '';
   sectionOne.appendChild(article);
+
+  //Esto no me esta funcionando...veo qué ocurre mañana
+  document.getElementById("next").addEventListener("click", function () {
+    pintarRecipes();
+  })
+
 }
+
+pintarRecipes();
+
+
 
 
 
@@ -223,11 +223,11 @@ function pintarAbout() {
   // Obtener la secciónOne
   let sectionOne = document.querySelector('.sectionOne');
 
-  // Crear un artículo con la info de mi about
+  // Creo un artícle con la info de mi about
   let article = document.createElement('article');
 
-  let h2= document.createElement('h2');
-  h2.textContent='About me';
+  let h2 = document.createElement('h2');
+  h2.textContent = 'About me';
   h2.classList.add('about_h2');
 
 
@@ -236,24 +236,24 @@ function pintarAbout() {
   img.alt = 'Foto de chica comiendo gusanitos';
   img.classList.add('about_img');
 
-  let p= document.createElement('p');
-  p.textContent=('Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He de reconocer que me gusta más comer que cocinar. Pero aún así,cocinar es una de mis grandes pasiones, y si es en buena compañía y con un buen vino, pues mucho mejor. Desde pequeña la cocina ha estado muy presente en mi vida. Mi padre ha tenido varios restaurantes y ha sido un gran cocinero, muy minucioso y siempre creando platos y sabores nuevos. Por otro lado, toda mi familia proviene de Andalucía. Allí hay mucha tradición gastronómica y en los eventos familiares el arroz, un puchero o un buen pescado no podían faltar en el menú. Espero que disfrutéis tanto como yo de esta magnífica colección de recetas.');
+  let p = document.createElement('p');
+  p.textContent = ('Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He de reconocer que me gusta más comer que cocinar. Pero aún así,cocinar es una de mis grandes pasiones, y si es en buena compañía y con un buen vino, pues mucho mejor. Desde pequeña la cocina ha estado muy presente en mi vida. Mi padre ha tenido varios restaurantes y ha sido un gran cocinero, muy minucioso y siempre creando platos y sabores nuevos. Por otro lado, toda mi familia proviene de Andalucía. Allí hay mucha tradición gastronómica y en los eventos familiares el arroz, un puchero o un buen pescado no podían faltar en el menú. Espero que disfrutéis tanto como yo de esta magnífica colección de recetas.');
   p.classList.add('about_p');
 
-
-
-  // Agregar las etiquetas al artícle
+  // Agrego las etiquetas al artícle
   article.appendChild(h2);
   article.appendChild(img);
   article.appendChild(p);
 
-  // Reemplazar la imagen en la sectionOne con el nuevo artículo
+  // Reemplazo la imagen en la sectionOne con el nuevo artícle
   sectionOne.innerHTML = '';
   sectionOne.appendChild(article);
+
 }
 
-pintarAbout();
+//pintarAbout();
 
 
+//BUSCADOR FILTRADO : strCategory: /posición 0 ->'Beef' 'Chicken' 'Dessert' 'Lamb' 'Miscellaneous' 'Pasta' 'Pork' 'Seafood' 'Side' 'Starter' 'Vegan' 'Vegetarian' 'Breakfast' 'Goat'
 
 
