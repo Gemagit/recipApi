@@ -27,17 +27,27 @@ function pintarHome() {
   nav.appendChild(ul);
   sectionTwo.appendChild(nav);
 
-  // Creo búsqueda por categoría
-  let formulario = document.createElement('form');
-  let inputBusqueda = document.createElement('input');
-  inputBusqueda.type = 'text';
-  inputBusqueda.placeholder = 'Your favourite food';
-  let botonBusqueda = document.createElement('button');
-  botonBusqueda.type = 'submit';
-  botonBusqueda.textContent = 'Buscar';
-  formulario.appendChild(inputBusqueda);
-  formulario.appendChild(botonBusqueda);
-  sectionTwo.appendChild(formulario);
+  // Creo un contenedor para hacer el filtrado por categoría
+  let div = document.createElement('div');
+  div.classList.add('search-container');
+  nav.appendChild(div);
+
+  let input = document.createElement('input');
+  input.type = 'text';
+  input.placeholder = 'Search your favourite food';
+  div.appendChild(input);
+
+  let ul2 = document.createElement('ul');
+  ul2.classList.add('results-list');
+  ul2.id = 'noResults';
+  input.appendChild(ul2);
+
+
+  let p = document.createElement('p');
+  p.classList.add('no-results');
+  p.textContent = ('No se encontraron resultados');
+  ul2.appendChild(p);
+
 
   contenedor.appendChild(sectionTwo);
 
@@ -52,11 +62,10 @@ function pintarHome() {
   contenedor.appendChild(sectionOne);
 
 
-
-
   // Obtener el elemento main y agregar el contenedor a él
   let main = document.querySelector('main');
   main.appendChild(contenedor);
+  filterCategory();
 }
 
 // Llamo a la función para que se ejecute y pinte la estructura en el DOM porque he llamado dentro también a la otra función.
@@ -131,8 +140,8 @@ async function pintarRecipes() {
     ]
   };
 
-  /*  let response = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
-   let data = await response.json(); */
+  /* let response = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
+  let data = await response.json(); */
 
   // Obtener el array de recetas
   let meals = data.meals;
@@ -180,7 +189,7 @@ async function pintarRecipes() {
   let button = document.createElement('button');
   button.textContent = 'Next recipe';
   button.classList.add('next');
-  document.getElementsByTagName('article');
+
 
 
   // Agregar las etiquetas al artícle
@@ -197,8 +206,8 @@ async function pintarRecipes() {
   sectionOne.innerHTML = '';
   sectionOne.appendChild(article);
 
-  //Esto no me esta funcionando...veo qué ocurre mañana
-  document.getElementById("next").addEventListener("click", function () {
+
+  button.addEventListener("click", function () {
     pintarRecipes();
   })
 
@@ -257,3 +266,51 @@ function pintarAbout() {
 //BUSCADOR FILTRADO : strCategory: /posición 0 ->'Beef' 'Chicken' 'Dessert' 'Lamb' 'Miscellaneous' 'Pasta' 'Pork' 'Seafood' 'Side' 'Starter' 'Vegan' 'Vegetarian' 'Breakfast' 'Goat'
 
 
+
+//Comprobar lógica que no lo estoy haciendo bien
+function filterCategory() {
+  const categories = [
+    { strCategory: 'Beef' },
+    { strCategory: 'Chicken' },
+    { strCategory: 'Dessert' },
+    { strCategory: 'Lamb' },
+    { strCategory: 'Miscellaneous' },
+    { strCategory: 'Pasta' },
+    { strCategory: 'Pork' },
+    { strCategory: 'Seafood' },
+    { strCategory: 'Side' },
+    { strCategory: 'Starter' },
+    { strCategory: 'Vegan' },
+    { strCategory: 'Vegetarian' },
+    { strCategory: 'Breakfast' },
+    { strCategory: 'Goat' },
+  ];
+
+  const searchInput = document.getElementById("searchInput");
+  const resultList = document.getElementById("resultsList");
+  const noResults = document.getElementById("noResults");
+
+  const handleSearch = () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredCategories = categories.filter((categories) => categories.strCategory.toLowerCase().startsWith(searchTerm));
+
+    resultList.innerHTML = "";
+
+    if (filteredCategories.length === 0) {
+      noResults.style.display = "block";
+    } else {
+      filteredCategories.forEach((category) => {
+        const li = document.createElement("li");
+        li.textContent = category.strCategory;
+        resultList.appendChild(li);
+      });
+      noResults.style.display = "none";
+    }
+
+    if (searchInput.value === "") {
+      resultList.innerHTML = "";
+    }
+  };
+
+  searchInput.addEventListener("input", handleSearch);
+}

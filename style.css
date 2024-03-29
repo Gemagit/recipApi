@@ -99,6 +99,46 @@ body {
 }
 
 
+.search-container {
+    width: 80%;
+    height: 5px;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid #B26E63;
+    color:#38618C;
+    border-radius: 8px;
+    outline: none;
+}
+
+.results-list {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
+    text-align: center;
+    font-size: 22px;
+}
+
+.results-list li {
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.no-results {
+    font-size: 20px;
+    text-align: center;
+    display: none;
+}
+
+
 img {
     width: 100%;
     height: 300px;
@@ -107,6 +147,7 @@ img {
 
 
 ul {
+    margin-top: 5px;
     margin-bottom: 10px;
     list-style-type: none;
     font-weight: bold;
@@ -128,7 +169,7 @@ h1 {
     height: auto;
     text-align: right;
     margin-top: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     font-size: 50px;
 }
 
@@ -236,6 +277,44 @@ button {
         margin-bottom: 10px;
     }
 
+    .search-container {
+        width: 80%;
+        height: 5px;
+        margin-left: 25px;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        font-size: 15px;
+        border: 2px solid #B26E63;
+        color:#38618C;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .results-list {
+        margin-top: 10px;
+        padding-left: 0;
+        list-style-type: none;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .results-list li {
+        padding: 8px;
+        border-radius: 4px;
+        margin-bottom: 4px;
+        cursor: pointer;
+    }
+
+    .no-results {
+        font-size: 20px;
+        text-align: center;
+        display: none;
+    }
+
 
     img {
         width: 90%;
@@ -337,6 +416,44 @@ button {
         font-size: 30px;
         margin-left: 280px;
         margin-bottom: 20px;
+    }
+
+    .search-container {
+        width: 80%;
+        height: 5px;
+        margin-left: 25px;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        font-size: 16px;
+        border: 2px solid #B26E63;
+        color:#38618C;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .results-list {
+        margin-top: 10px;
+        padding-left: 0;
+        list-style-type: none;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .results-list li {
+        padding: 8px;
+        border-radius: 4px;
+        margin-bottom: 4px;
+        cursor: pointer;
+    }
+
+    .no-results {
+        font-size: 20px;
+        text-align: center;
+        display: none;
     }
 
 
