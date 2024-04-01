@@ -30,56 +30,8 @@ function pintarHome() {
   sectionTwo.appendChild(nav);
 
   // Creo un contenedor para hacer el filtrado por categoría
-  let div = document.createElement('div');
-  div.classList.add('search-container');
-  nav.appendChild(div);
+  
 
-  let input = document.createElement('input');
-  input.type = 'text';
-  input.placeholder = 'Search your favourite food';
-  div.appendChild(input);
-
-  let ul2 = document.createElement('ul');
-  ul2.classList.add('results-list');
-  ul2.id = 'noResults';
-  input.appendChild(ul2);
-
-
-  let p = document.createElement('p');
-  p.classList.add('no-results');
-  p.textContent = ('No se encontraron resultados');
-  ul2.appendChild(p);
-
-  let noResults = document.createElement('p');
-  noResults.classList.add('no-results');
-  noResults.textContent = ('No se encontraron resultados');
-  noResults.style.display = 'none';
-  div.appendChild(noResults);
-
-  /* let searchInput = input;
- 
-let handleSearch = () => {
-    let searchTerm = searchInput.value.toLowerCase();
-    let filteredCategories = meals.filter((meal) => meal.strCategory.toLowerCase().startsWith(searchTerm));
- 
-    ul2.innerHTML = "";
- 
-    if (filteredCategories.length === 0) {
-      noResults.style.display = "block";
-    } else {
-      filteredCategories.forEach((meal) => {
-        const li = document.createElement("li");
-        li.textContent = meal.strCategory;
-        ul2.appendChild(li);
-      });
-      noResults.style.display = "none";
-    }
-  };
- 
-  sectionOne.innerHTML = '';
- 
-  searchInput.addEventListener("input", handleSearch);
-*/
   contenedor.appendChild(sectionTwo);
 
   // Creo sección uno con la imagen
@@ -128,7 +80,7 @@ function pintarAbout() {
   img.classList.add('about_img');
 
   let p = document.createElement('p');
-  p.textContent = ('Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He de reconocer que me gusta más comer que cocinar. Pero aún así,cocinar es una de mis grandes pasiones, y si es en buena compañía y con un buen vino, pues mucho mejor. Desde pequeña la cocina ha estado muy presente en mi vida. Mi padre ha tenido varios restaurantes y ha sido un gran cocinero, muy minucioso y siempre creando platos y sabores nuevos. Por otro lado, toda mi familia proviene de Andalucía. Allí hay mucha tradición gastronómica y en los eventos familiares el arroz, un puchero o un buen pescado no podían faltar en el menú. Espero que disfrutéis tanto como yo de esta magnífica colección de recetas.');
+  p.textContent = ('Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He de reconocer que me gusta más comer que cocinar. Pero aún así, cocinar es una de mis grandes pasiones, y si es en buena compañía y con un buen vino, pues mucho mejor. Desde pequeña la cocina ha estado muy presente en mi vida. Mi padre ha tenido varios restaurantes y ha sido un gran cocinero, muy minucioso y siempre creando platos y sabores nuevos. Por otro lado, toda mi familia proviene de Andalucía. Allí hay mucha tradición gastronómica y en los eventos familiares el arroz, un puchero o un buen pescado no podían faltar en el menú. Espero que disfrutéis tanto como yo de esta magnífica colección de recetas.');
   p.classList.add('about_p');
 
   // Agrego las etiquetas al artícle
@@ -190,7 +142,7 @@ async function pintarRecipes() {
   let sectionOne = document.querySelector('.sectionOne');
 
   //Esto es solo para trabajar con un ejemplo de receta y no saturar la llamada a la API--> declaro el objeto que contiene el array de objetos meals. Después accederé a cada clave valor para pintar en el DOM
-  let data = {
+ /*  let data = {
     "meals": [
       {
         "strMeal": "Squash linguine",
@@ -239,10 +191,10 @@ async function pintarRecipes() {
         "strMeasure20": "",
       }
     ]
-  };
+  }; */
 
-  /* let response = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
-  let data = await response.json();  */
+  let response = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
+  let data = await response.json(); 
 
   let meals = data.meals;
 
