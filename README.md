@@ -16,12 +16,15 @@ Hay que destacar la importancia que tiene hoy en día "mobile-first", con ello, 
 
 ### MOBILE
 
+![mobilefirst](https://github.com/Gemagit/recipApi/assets/143506667/d9dbb0ec-44e4-4b18-9949-50c7ca4a004a)
 
 ### IPAD
 
+![ipad](https://github.com/Gemagit/recipApi/assets/143506667/adf00604-c04b-4251-b9d7-602faed798cd)
 
 ### DESKTOP
 
+![desktop](https://github.com/Gemagit/recipApi/assets/143506667/8b18d448-b0aa-4a94-a4cd-da1179e9ee4e)
 
 ## 2. Tecnologies
 
