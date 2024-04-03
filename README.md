@@ -33,7 +33,7 @@ Las tecnologías usadas en este quiz son las siguientes:
 
 ## 3. Features
 
-En primer lugar hice una petición a una [API](https://opentdb.com/), elegida por mí. Para ello habia que realizar un **fetch** desde Javascript para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera **seleccionar preguntas** y el fondo cambie de color. 
+En primer lugar hice una petición a una [API]([https://www.themealdb.com/]), elegida por mí. Para ello habia que realizar un **fetch** desde Javascript para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera **seleccionar preguntas** y el fondo cambie de color. 
 
 
 
@@ -49,4 +49,4 @@ Mi nombre es Gema, y es un placer poder compartir estas recetas con vosotros. He
 
 ![Captura de pantalla 2024-03-13 a las 16 15 39](https://github.com/Gemagit/quiz2.0/assets/143506667/4b5a34e0-1914-4145-af1f-a52c3c407f59)
 
-## [Pulsa aquí para viistar mi proyecto recipApi]([https://gemagit.github.io/quiz2.0/](https://gemagit.github.io/recipApi/))
+## [Pulsa aquí para viistar mi proyecto recipApi]([https://gemagit.github.io/recipApi/)])
