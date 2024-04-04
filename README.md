@@ -16,7 +16,7 @@ Hay que destacar la importancia que tiene hoy en día **"mobile-first"**, con el
 
 ### MOBILE
 
-![Captura de pantalla 2024-04-05 a las 0 07 37](https://github.com/Gemagit/recipApi/assets/143506667/2b8595ef-0ed1-4c62-aa22-1599188954d3)
+![Captura de pantalla 2024-04-05 a las 0 07 37](https://github.com/Gemagit/recipApi/assets/143506667/8ecfe2f8-ae6c-46df-af3b-652e9ebf7c95)
 
 ### IPAD
 
