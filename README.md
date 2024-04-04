@@ -20,11 +20,11 @@ Hay que destacar la importancia que tiene hoy en día **"mobile-first"**, con el
 
 ### IPAD
 
-
+![Captura de pantalla 2024-04-05 a las 0 04 16](https://github.com/Gemagit/recipApi/assets/143506667/28d07a76-d353-4bb6-bea5-a8e72fe335cc)
 
 ### DESKTOP
 
-
+![Captura de pantalla 2024-04-05 a las 0 02 27](https://github.com/Gemagit/recipApi/assets/143506667/0427f2a0-d497-42e3-8126-22e47fa21d7f)
 
 ## 2. Tecnologies
 
