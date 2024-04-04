@@ -38,7 +38,9 @@ Las tecnologías usadas en este quiz son las siguientes:
 
 En primer lugar hice una petición a una **API** que se llama [Mealdb](https://www.themealdb.com/), elegida por mí . Para ello había que realizar un **fetch** desde **Javascript** para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera navegar y buscar recetas de forma intuitiva a través de mi navegador. Como habéis podido observar en las capturas que os he proporcionado en el **readMe**, mi aplicación consta de dos partes bien diferenciadas. Por un lado; el navegador que tiene varias opciones de redireccionamiento: Home, Recipes, About y un buscador con varias opciones de búsqueda. Aquí he hecho la solicitud a la **API**, filtrando por categorías ( salad, vegetarían, chicken, pasta…)
 Por otro lado, tengo el contenido principal que son las recetas con toda su información dentro. Una funcionalidad importante a destacar aquí es que después de cada receta seleccionada, puedes pasar a la siguiente mediante un botón **“Next recipe”**.
+
 ![boton_next](https://github.com/Gemagit/recipApi/assets/143506667/93566396-6cfc-4860-b833-14c6b55c749c)
+
 Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo que he tenido me ha permitido llegar hasta aquí, estoy muy satisfecha con el resultado y con todo lo aprendido.
 
 
@@ -47,7 +49,9 @@ Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo
 
 Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros. Se trata de colores originales y únicos ya que los he elegido exclusivamente para este proyecto de una paleta de colores de la web de Coloors. Los tonos son crudos, rosas bermellón, azules..
 La fuente elegida es Didot, que destaca por su sencillez.
+
 ![diseñoLetras](https://github.com/Gemagit/recipApi/assets/143506667/60ac6d03-c69a-443d-bcce-0d757aaeefa1)
+
 Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
 
