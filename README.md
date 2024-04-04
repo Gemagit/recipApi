@@ -47,7 +47,11 @@ Me gustaría seguir implementando funcionalidades a este proyecto pero el tiempo
 
 ## 4. Design
 
-Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros. Se trata de colores originales y únicos ya que los he elegido exclusivamente para este proyecto de una paleta de colores de la web de Coloors. Los tonos son crudos, rosas bermellón, azules..
+Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros.
+
+![Captura de pantalla 2024-04-03 a las 18 52 52](https://github.com/Gemagit/recipApi/assets/143506667/7dc5f04e-1172-46d4-87f4-7e56f7f2402f)
+
+Se trata de colores originales y únicos ya que los he elegido exclusivamente para este proyecto de una paleta de colores de la web de Coloors. Los tonos son crudos, rosas bermellón, azules..
 La fuente elegida es Didot, que destaca por su sencillez.
 
 ![diseñoLetras](https://github.com/Gemagit/recipApi/assets/143506667/60ac6d03-c69a-443d-bcce-0d757aaeefa1)
