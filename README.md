@@ -36,13 +36,15 @@ Las tecnologías usadas en este quiz son las siguientes:
 
 ## 3. Features
 
-En primer lugar hice una petición a una [API]([https://www.themealdb.com/]), elegida por mí. Para ello habia que realizar un **fetch** desde Javascript para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera **seleccionar preguntas** y el fondo cambie de color. 
+En primer lugar hice una petición a una API que se llama [Mealdb]([https://www.themealdb.com/]), elegida por mí . Para ello había que realizar un fetch desde Javascript para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera navegar y buscar recetas de forma intuitiva a través de mi navegador. Como habéis podido observar en las capturas que os he proporcionado en el readMe de Mobile First, mi aplicación consta de dos partes bien diferenciadas. Por un lado; el navegador que tiene varias opciones de redireccionamiento: Home, Recipes, About y un buscador con varias opciones de búsqueda. Aquí he hecho la solicitud a la API, filtrando por categorías ( salad, vegetarían, chicken, pasta…)
+Por otro lado, tengo el contenido principal que son las recetas con toda su información dentro. Una funcionalidad importante a destacar aquí es que después de cada receta seleccionada, puedes pasar a la siguiente mediante un botón “Next recipe”. Me gustaría seguir implementando funcionalidades a este proyecto, el tiempo que he tenido me ha permitido llegar hasta aquí, pero estoy muy satisfecha con el resultado.
 
 
 
 ## 4. Design
 
-Una de las grandes confusiones respecto de la cultura oriental que tienen quienes no están tan inmersos en ella es creer que el manga y el anime se refieren a la misma expresión cultural. Pero hablamos de dos conceptos diferentes, dos productos distintos que sólo se parecen. El manga es un cómic y el anime es un dibujo animado, y así de fácil deberíamos distinguirlos. Los colores que hemos elegido son el blanco, negro y gris simulando que navegamos sobre un comic. La fuente también es propia de comic manga.
+Se trata de un diseño web muy sencillo. Consta de un navegador situado en la parte izquierda en el que se encuentran los links que te dirigen al contenido, que después se mostrará en la parte derecha. Los colores elegidos son tonos claros. Se trata de colores originales y únicos ya que los he elegido exclusivamente para este proyecto de una paleta de colores de la web de Coloors. Los tonos son crudos, rosas bermellón, azules..
+La fuente elegida es Didot, que destaca por su sencillez. Mi aplicación web huye un poco de los artificios ya que quiero que el usuario disfrute de la experiencia de navegar en una web sencilla pero a la vez visualmente atractiva.
 
 
 
