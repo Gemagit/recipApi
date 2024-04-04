@@ -36,7 +36,10 @@ Las tecnologías usadas en este quiz son las siguientes:
 
 ## 3. Features
 
-En primer lugar hice una petición a una **API** que se llama [Mealdb](https://www.themealdb.com/), elegida por mí . Para ello había que realizar un **fetch** desde **Javascript** para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera navegar y buscar recetas de forma intuitiva a través de mi navegador. Como habéis podido observar en las capturas que os he proporcionado en el **readMe**, mi aplicación consta de dos partes bien diferenciadas. Por un lado; el navegador que tiene varias opciones de redireccionamiento: Home, Recipes, About y un buscador con varias opciones de búsqueda. Aquí he hecho la solicitud a la **API**, filtrando por categorías ( salad, vegetarían, chicken, pasta…)
+En primer lugar hice una petición a una **API** que se llama [Mealdb](https://www.themealdb.com/), elegida por mí . Para ello había que realizar un **fetch** desde **Javascript** para hacer la solicitud y seguidamente diseñé distintos algoritmos para que el usuario pudiera navegar y buscar recetas de forma intuitiva a través de mi navegador. Como habéis podido observar en las capturas que os he proporcionado en el **readMe**, mi aplicación consta de dos partes bien diferenciadas. Por un lado; el navegador que tiene varias opciones de redireccionamiento: Home, Recipes, About y un buscador con varias opciones de búsqueda. Aquí he hecho la solicitud a la **API**, filtrando por categorías ( salad, vegetarían, chicken, pasta…).
+
+![Captura de pantalla 2024-04-05 a las 0 13 18](https://github.com/Gemagit/recipApi/assets/143506667/cff449d1-ff51-4d67-b34c-8cd4bd435297)
+
 Por otro lado, tengo el contenido principal que son las recetas con toda su información dentro. Una funcionalidad importante a destacar aquí es que después de cada receta seleccionada, puedes pasar a la siguiente mediante un botón **“Next recipe”**.
 
 ![boton_next](https://github.com/Gemagit/recipApi/assets/143506667/93566396-6cfc-4860-b833-14c6b55c749c)
